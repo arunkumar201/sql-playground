@@ -1,0 +1,18 @@
+{
+	"cSpell.words": ["mydb"],
+	"pgsql.shortcuts": {
+	
+		"_comment": "Short cuts must follow the format (ctrl)+(shift)+(alt)+[key]",
+		"event.toggleResultPane": "ctrl+alt+r",
+		"event.toggleMessagePane": "ctrl+alt+y",
+		"event.prevGrid": "ctrl+up",
+		"event.nextGrid": "ctrl+down",
+		"event.copySelection": "ctrl+c",
+		"event.copyWithHeaders": "",
+		"event.maximizeGrid": "",
+		"event.selectAll": "",
+		"event.saveAsJSON": "",
+		"event.saveAsCSV": "",
+		"event.saveAsExcel": ""
+	}
+}
