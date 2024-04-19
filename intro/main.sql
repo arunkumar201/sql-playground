@@ -1,3 +1,4 @@
+-- Active: 1712767786781@@127.0.0.1@5433@practice_db@public
 -- Create database cmd is used to create the database 
 CREATE DATABASE practice_db;
 
@@ -33,3 +34,11 @@ this is multi line comments
 */
 
 SELECT name,id from student;
+
+
+select * from student LIMIT 3
+
+
+ALTER TABLE STudent ADD COLUMN fullName VARCHAR(20);
+
+
