@@ -1,5 +1,5 @@
 {
-	"cSpell.words": ["mydb", "Wachowski"],
+	"cSpell.words": ["imdb", "mydb", "Wachowski"],
 	"pgsql.shortcuts": {
 		"_comment": "Short cuts must follow the format (ctrl)+(shift)+(alt)+[key]",
 		"event.toggleResultPane": "ctrl+alt+r",

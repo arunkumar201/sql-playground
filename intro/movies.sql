@@ -116,3 +116,22 @@ select
     release_year,
     rating
 from movies;
+
+-- deletes all the rows from the movies_clone1 table
+select * from movies_clone1;
+
+delete from movies_clone1;
+
+-- delete the all the rows and free the space ALLOCATED to that table movies_cline1
+TRUNCATE TABLE movies_clone1;
+--DROP cmd is used to delete table (rm existence of the table )
+drop table movies_clone1
+
+select * from movies_clone;
+
+ALTER table movies_clone RENAME rating to imdb_rating;
+
+ALTER TABLE movies_clone add dummy TEXT DEFAULT 'dummy';
+
+-- drop the dummy colum from the movies_clone table
+alter table movies_clone drop column dummy
