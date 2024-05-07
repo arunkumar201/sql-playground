@@ -108,3 +108,5 @@ where o.customer_id = c.customer_id;
 select  order_id from orders
 UNION
 SELECT customer_id from customers; 
+
+
