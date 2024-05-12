@@ -17,3 +17,34 @@ employee
 UNION ALL
 select salaryId as salary_id from salary;
 
+
+-- USING INNER JOIN
+
+SELECT * from employee as e
+INNER JOIN salary as s
+on e.employeeId=s.salaryId;
+
+
+-- inner join will join thr two tables and return the data those are 
+-- common is both tables 
+SELECT *
+from employee as e
+INNER JOIN  salary as s on e.employeeId = s.salaryId
+ORDER BY s.salary DESC;
+
+-- Left join - it will return the result from left table +(data which matches the condition in right table else set as null)
+--returns all records from the left table and matched records from the right table
+SELECT *
+from employee as e
+LEFT JOIN  salary as s on e.employeeId = s.salaryId;
+-- Right join - it will return the result from right table +(data which matches the condition in left table else set as null
+--returns all records form the right table and matched records from the left table 
+SELECT *
+from employee as e
+RIGHT JOIN  salary as s on e.employeeId = s.salaryId
+
+-- full outer join - returns all records if there is match in either left table or right table 
+SELECT *
+from employee as e
+FULL OUTER JOIN  salary as s on e.employeeId = s.salaryId;
+
