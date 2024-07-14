@@ -25,11 +25,11 @@ INNER JOIN salary as s
 on e.employeeId=s.salaryId;
 
 
--- inner join will join thr two tables and return the data those are 
+-- inner join will join two tables and return the data those are 
 -- common is both tables 
 SELECT *
 from employee as e
-INNER JOIN  salary as s on e.employeeId = s.salaryId
+INNER JOIN  salary as  s on e.employeeId = s.salaryId
 ORDER BY s.salary DESC;
 
 -- Left join - it will return the result from left table +(data which matches the condition in right table else set as null)
@@ -47,4 +47,3 @@ RIGHT JOIN  salary as s on e.employeeId = s.salaryId
 SELECT *
 from employee as e
 FULL OUTER JOIN  salary as s on e.employeeId = s.salaryId;
-

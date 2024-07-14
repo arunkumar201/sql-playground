@@ -1,3 +1,4 @@
+-- Active: 1720932518269@@localhost@5432@postgres
 create TABLE Employee (
     EmployeeID INT PRIMARY KEY,
     FirstName VARCHAR(50),
