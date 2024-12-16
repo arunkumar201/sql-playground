@@ -1,0 +1,16 @@
+version: '3.8' 
+services:
+  db:
+    image: postgres:latest  
+    container_name: postgres_container  
+    environment:
+      POSTGRES_USER: postgres  
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sql-practice
+    ports:
+      - "5432:5432"  # Expose port 5432 on the host to port 5432 on the container
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Persist data using a named volume
+
+volumes:
+   pgdata:  # volume for data persistence
