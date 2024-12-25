@@ -23,3 +23,4 @@ GROUP BY
     1,
     2
 ORDER BY TotalSales DESC
+
