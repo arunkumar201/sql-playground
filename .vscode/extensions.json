@@ -1,0 +1,7 @@
+{
+	"recommendations": [
+		"cweijan.dbclient-jdbc",
+		"visualstudioexptteam.vscodeintellicode",
+		"inferrinizzard.prettier-sql-vscode"
+	]
+}
