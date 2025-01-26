@@ -257,3 +257,16 @@ SELECT
     ) as moving_average_3_days
 FROM Orders o
 ORDER BY o.order_date;
+
+-- BETWEEN operator 
+-- it is a logical operator that selects values within a given range. The values can be numbers, text,
+-- or dates. It has to be paired with the AND operator.
+
+-- Syntax
+-- BETWEEN expression1 AND expression2
+
+-- Select records from a table where the age is between 25 and 30
+SELECT * FROM orders WHERE total_amount BETWEEN 100 AND 3000;
+
+--the BETWEEN operator's range is inclusive. 
+--it means both the start and end values of the range are included!
