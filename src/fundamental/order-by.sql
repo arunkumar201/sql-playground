@@ -83,18 +83,41 @@ VALUES (1, 1, 1, 1299.99),
 
 SELECT first_name, last_name, join_date
 FROM Customers
-ORDER BY join_date;
+ORDER BY join_date
+LIMIT 10 OFFSET 10
 
 SELECT product_name, unit_price
 FROM Products
 ORDER BY unit_price ASC;
 
+-- avg price of item 
+SELECT FLOOR(avg(unit_price)) as avg_unit_price, product_name as pn
+from Products 
+group by pn
+ORDER BY avg_unit_price DESC;
+
 -- Descending sort using DESC keyword
+```
+The Rule
+When using GROUP BY, every column in the SELECT clause must either be:
+
+Included in the GROUP BY clause, OR
+An aggregate function (like COUNT, SUM, AVG, etc.)
+```
 SELECT
-    order_id,
-    total_amount,
-    order_date
+    total_amount
 FROM Orders
+GROUP BY total_amount
+ORDER BY total_amount DESC;
+
+
+SELECT
+    COUNT(*) as order_count,
+    total_amount,
+    MIN(order_date) as earliest_order
+FROM Orders
+GROUP BY
+    total_amount
 ORDER BY total_amount DESC;
 
 --below sql code will do the multi level sorting with primary on 
@@ -109,17 +132,17 @@ ORDER BY last_name ASC,
 --Sort by column position rather than name
 SELECT first_name, last_name, join_date
 FROM Customers
-ORDER BY 2, 3 DESC;
+ORDER BY 2 ASC, 3 DESC;
 -- Sort by last_name (2nd column), then join_date descending
 
 
-SELECT product_name, unit_price
+SELECT product_name, unit_price, category,product_id
 FROM Products
 ORDER BY unit_price DESC NULLS LAST;
 -- it places the NULL values at end of result set
 
 -- Pagination -  sorting
-SELECT product_name, unit_price
+SELECT product_name, unit_price, product_id
 FROM Products
 ORDER BY unit_price DESC
 LIMIT 10 OFFSET 0;
@@ -142,6 +165,9 @@ ORDER BY total_spend DESC NULLS LAST, -- sorting with Primary: Total spending
     total_orders DESC;
 -- soritn on Secondary: Number of orders
 
+select * from orders;
+
+select * from customers;
 -- ----------- 
 /*  
 - ASC (default) sorts low-to-high, DESC high-to-low

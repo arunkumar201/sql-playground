@@ -1,3 +1,4 @@
+-- Active: 1750568340710@@127.0.0.1@5432@interview
 --create employee and customers table 
 CREATE TABLE employees (
 	employee_id INT,
@@ -18,7 +19,7 @@ INSERT INTO employees (employee_id, first_name, last_name, city)
 VALUES (1, 'John', 'Doe', 'New York');
 
 INSERT INTO customers (customer_id, first_name, last_name, email)
-VALUES (1, 'Jane', 'Smith', 'jane.smith@example.');
+VALUES (12, 'Jane', 'Smith', 'jane.smith@example.');
 
 -- The CONCAT function is used to concatenate two or more strings together.
 -- it concatenates the first name and last name columns and assigns it to the full_name column.
