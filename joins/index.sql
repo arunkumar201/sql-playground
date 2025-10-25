@@ -686,8 +686,12 @@ VALUES
     (15, 5, 1, 45.50, 45.50),
     (15, 6, 8, 12.99, 103.92);
 
+-- set the sequence values to the max id of the table
+-- it helps to maintain the sequence values when we insert data or new rows
+-- here "_seq" is the built-in sequence in postgres
 SELECT setval ( 'users_id_seq', ( SELECT MAX(id) FROM users ) );
 
+-- set the sequence values to the max id of the table
 SELECT setval (
         'categories_id_seq', (
             SELECT MAX(id)
@@ -726,11 +730,12 @@ select * from users;
 select * from orders;
 
 /*
-Returns all rows from the left table and the matching rows from the right table. If there is no match in the right table, NULL values are returned for the right table's columns.
+Let's say we have a table called 'users' and a table called 'orders'. 
+If we perform a left join between these two tables, it means we want to combine all the rows from the 'users' table with the rows from the 'orders' table where there is a matching value in both tables. 
 
-here
-users table will be considered as Left TABLE
-orders table will be considered as Right TABLE
+If there is no matching value in the 'orders' table for a particular row in the 'users' table, the columns of the 'orders' table for that row will be filled with NULL values.
+
+So, in a left join between 'users' and 'orders', the result will include all the rows from the 'users' table, and for each row in the 'users' table, it will show the matching rows from the 'orders' table if there is a match, or NULL values if there is no match.
 */
 SELECT
     u.id as user_id,
@@ -745,11 +750,14 @@ FROM users as u
     LEFT JOIN orders as o ON u.id = o.user_id
 
 /*
-Returns all rows from the right table and the matching rows from the left table. If there is no match in the left table, NULL values are returned for the left table's columns.
+Let's say we have a table called 'users' and a table called 'orders'. 
+If we perform a right join between these two tables, it means we want to combine all the rows from the 'orders' table with the rows from the 'users' table where there is a matching value in both tables. 
 
-here
-users table will be considered as Left TABLE
-orders table will be considered as Right TABLE
+If there is no matching value in the 'users' table for a particular row in the 'orders' table, the columns of the 'users' table for that row will be filled with NULL values.
+
+So, in a right join between 'users' and 'orders', the result will include all the rows from the 'orders' table, and for each row in the 'orders' table, it will show the matching rows from the 'users' table if there is a match, or NULL values if there is no match.
+
+In a nutshell, the 'users' table will be considered as the Right Table and 'orders' table will be considered as the Left Table.
 */
 
 SELECT
@@ -764,16 +772,13 @@ SELECT
 FROM users as u
     RIGHT JOIN orders as o ON u.id = o.user_id
 
-/
 
-
-*
-
+/*
 FullJoin ior Full Outer Join
 - Returns all rows from both tables, matching rows from both tables, and NULL values for non-matching rows.
 Returns all rows when there is a match in either the left or the right table. If there is no match, NULL values are returned for the columns of the table that does not have a match.
 
-here * /
+*/
 
 SELECT
     u.id as user_id,
